@@ -5,12 +5,11 @@
     <title>Welcome</title>
 </head>
 <body>
-    <%
-        int a = 5;
-        a += 5;
-    %>
-    ${a}
-    <p><c:out value="${key}"></c:out></p>
-    <p><c:out value='${header["user-agent"]}'></c:out></p>
+    <c:set var="a" value="5"/>
+    <p>\${a} = ${a}</p>
+    <p>c:out(a) = <c:out value="${a}"/></p>
+    <p>c:out(keySession) = <c:out value="${keySession}"/></p>
+    <p>c:out(keyRequest) = <c:out value="${keyRequest}"/></p>
+    <p>c:out(header["user-agent"]) = <c:out value='${header["user-agent"]}'/></p>
 </body>
 </html>

@@ -15,9 +15,9 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         HttpSession session = req.getSession();
-        session.setAttribute("key", "sessionScope");
-        req.setAttribute("key", "requestScope");
-        resp.sendRedirect("welcome.jsp");
+        session.setAttribute("keySession", "sessionScope");
+        req.setAttribute("keyRequest", "requestScope");
+        req.getRequestDispatcher("welcome.jsp").forward(req, resp);
     }
 
 }
